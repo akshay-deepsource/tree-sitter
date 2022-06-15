@@ -2066,6 +2066,10 @@ impl<'a, 'tree, T: TextProvider<'a>> QueryMatches<'a, 'tree, T> {
             ffi::ts_query_cursor_set_point_range(self.ptr, range.start.into(), range.end.into());
         }
     }
+
+    pub fn query(&self) -> &'a Query {
+        self.query
+    }
 }
 
 impl<'a, 'tree, T: TextProvider<'a>> QueryCaptures<'a, 'tree, T> {
